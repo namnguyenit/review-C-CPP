@@ -63,6 +63,8 @@ int main(){
       scanf("%d" , &k);
       themnode(&head,k);
     }
+  
       duyett(head);
     Free(head);
 }
+
