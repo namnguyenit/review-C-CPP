@@ -13,6 +13,7 @@ typedef struct student {
 void nhap_student(student *s);
 void in_student(student s);
 void cn_student(student *s, const student *new_data);
+student tao_student(int id, const char *name, int age, int clas, float gpa);
 
 int ss_by_gpa(student s1, student s2);
 int ss_by_name(student s1, student s2);

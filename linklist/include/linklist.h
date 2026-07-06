@@ -33,9 +33,9 @@ int xoagiua(LinkList *list, int vt);
 typedef void (*studentCB)(student s);
 void all(LinkList *list, studentCB cb);
 typedef int (*searchCB)(student s);
-Node* search (LinkList *list, studentCB cb);
-typedef int (*arrangeCB) (student s);
-void arrange (LinkList *list, studentCB cb);
+Node* search (LinkList *list, searchCB cb);
+typedef int (*arrangeCB) (student s1, student s2);
+void arrange (LinkList *list, arrangeCB cb);
 
 
 // void capnhat(Node *head, student data, int vt);

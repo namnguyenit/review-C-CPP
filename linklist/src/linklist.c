@@ -88,7 +88,7 @@ int themgiua(LinkList *list, student data, int vt){
     Node *temp = newnode(data);
     if (temp == NULL) {
         fprintf(stderr, "Cap phat bo nho that bai\n");
-        return;
+        return 0;
     }
 
     Node *t = list->head;
@@ -111,6 +111,7 @@ int xoadau (LinkList *list){
     }
     list->size--;
     free(temp);
+    return 1;
 }
 int xoacuoi(LinkList *list){
 
@@ -120,7 +121,7 @@ int xoacuoi(LinkList *list){
         free(temp);
         list->head = NULL;
         list->tail = NULL;
-        list->size==0;
+        list->size = 0;
         return 1;
     }
     Node *prev = NULL;
@@ -140,12 +141,10 @@ int xoagiua(LinkList *list, int vt){
 
 
     if (vt == 0) {
-        xoadau(list);
-        return;
+        return xoadau(list);
     }
     if (vt == list->size - 1) {
-        xoacuoi(list);
-        return;
+        return xoacuoi(list);
     }
     Node *temp = list->head;
     Node *prev = NULL;
@@ -235,7 +234,46 @@ void freeall(Node **head) {
     }
 }
 
+Node* search(LinkList *list, searchCB cb) {
+    if (list == NULL || cb == NULL) {
+        return NULL;
+    }
+    Node *temp = list->head;
+    while (temp != NULL) {
+        if (cb(temp->data)) {
+            return temp;
+        }
+        temp = temp->next;
+    }
+    return NULL;
+}
 
+void all(LinkList *list, studentCB cb) {
+    if (list == NULL || cb == NULL) {
+        return;
+    }
+    Node *temp = list->head;
+    while (temp != NULL) {
+        cb(temp->data);
+        temp = temp->next;
+    }
+}
+
+
+void arrange(LinkList *list, arrangeCB cb) {
+    if (list == NULL || list->size <2 || cb == NULL) {
+        return;
+    }
+    for (Node *i = list->head; i != NULL; i = i->next) {
+        for (Node *j = i->next; j != NULL; j = j->next) {
+            if (cb(i->data, j->data) > 0) {
+                student temp = i->data;
+                i->data = j->data;
+                j->data = temp;
+            }
+        }
+    }
+}
 
 
 
