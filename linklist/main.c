@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "include/linklist.h"
 #include "include/student.h"
-
+#define CLEAR_SCREEN "\033[2J\033[H"
 void in_sinh_vien_cb(student s)
 {
     in_student(s);
