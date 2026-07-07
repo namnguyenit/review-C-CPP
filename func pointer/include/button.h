@@ -6,5 +6,4 @@ void dkButtonCallback(buttonCallback cb);
 
 void nhanNut(void);
 
-
 #endif

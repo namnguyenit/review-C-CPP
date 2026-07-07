@@ -3,18 +3,21 @@
 
 #include "student.h"
 
+#define SUCCESS 1
+#define FAILURE 0
 
-typedef struct Node {
+typedef struct Node
+{
   student data;
   struct Node *next;
 } Node;
 
-typedef struct LinkList{
+typedef struct LinkList
+{
   Node *head;
   Node *tail;
   int size;
 } LinkList;
-
 
 Node *newnode(student data);
 
@@ -25,18 +28,16 @@ int themdau(LinkList *list, student data);
 int themcuoi(LinkList *list, student data);
 int themgiua(LinkList *list, student data, int vt);
 
-int xoadau (LinkList *list);
+int xoadau(LinkList *list);
 int xoacuoi(LinkList *list);
 int xoagiua(LinkList *list, int vt);
-
 
 typedef void (*studentCB)(student s);
 void all(LinkList *list, studentCB cb);
 typedef int (*searchCB)(student s);
-Node* search (LinkList *list, searchCB cb);
-typedef int (*arrangeCB) (student s1, student s2);
-void arrange (LinkList *list, arrangeCB cb);
-
+Node *search(LinkList *list, searchCB cb);
+typedef int (*arrangeCB)(student s1, student s2);
+void arrange(LinkList *list, arrangeCB cb);
 
 // void capnhat(Node *head, student data, int vt);
 // void xemnode (Node * head, int vt);

@@ -7,12 +7,12 @@ void ledOn(void);
 void ledOff(void);
 void printHello(void);
 
-typedef struct {
+typedef struct
+{
     char *name;
     buttonCallback callback;
 
 } callBackEvent;
-
 
 extern callBackEvent callBackTable[];
 extern const int callBackCount;

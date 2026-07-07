@@ -1,14 +1,16 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-typedef struct student {
+#define MAX_NAME_LENGTH 50
+
+typedef struct student
+{
     int id;
-    char name[50];
+    char name[MAX_NAME_LENGTH];
     int age;
     int clas;
     float gpa;
 } student;
-
 
 void nhap_student(student *s);
 void in_student(student s);

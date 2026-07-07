@@ -2,6 +2,8 @@
 #include "callback.h"
 #include "button.h"
 
+#define CLEAR_SCREEN "\033[2J\033[H"
+
 int main()
 {
 
@@ -10,7 +12,7 @@ int main()
 
     while (1)
     {
-        printf("\033[2J\033[H");
+        printf(CLEAR_SCREEN);
         printf("\n===== MENU =====\n");
         printf("1. DK Button Callback\n");
         printf("2. Nhan Nut\n");
@@ -19,7 +21,7 @@ int main()
         switch (menu)
         {
         case 1:
-            printf("\033[2J\033[H");
+            printf(CLEAR_SCREEN);
             printf("\n===== Callback Table =====\n");
             for (int i = 0; i < callBackCount; i++)
             {
