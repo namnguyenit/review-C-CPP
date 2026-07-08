@@ -1,0 +1,20 @@
+# Compiled Object files
+*.o
+*.obj
+
+# Executables (compiled binaries)
+app
+main
+**/app
+**/main
+
+# Libraries and Link files
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.out
+
+# Dependency files
+*.d
