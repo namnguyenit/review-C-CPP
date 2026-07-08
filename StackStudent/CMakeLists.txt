@@ -15,6 +15,13 @@ set(SOURCES
     ../linklist/src/student.c
 )
 
+# Tự động xuất file thực thi ra thư mục riêng biệt tùy theo kiến trúc chip (x86 hay arm)
+if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(arm.*|ARM.*)")
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin/arm)
+else()
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin/x86)
+endif()
+
 # 2. Tạo ra tệp thực thi tên là "app" từ danh sách SOURCES
 add_executable(app ${SOURCES})
 

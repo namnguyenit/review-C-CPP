@@ -1,3 +1,0 @@
-/home/trungcao/training/review-C/StackStudent/build/CMakeFiles/app.dir
-/home/trungcao/training/review-C/StackStudent/build/CMakeFiles/edit_cache.dir
-/home/trungcao/training/review-C/StackStudent/build/CMakeFiles/rebuild_cache.dir

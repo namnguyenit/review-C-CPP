@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/trungcao/training/review-C/StackStudent
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/trungcao/training/review-C/StackStudent/build
+CMAKE_BINARY_DIR = /home/trungcao/training/review-C/StackStudent/build_x86
 
 # Include any dependencies generated for this target.
 include CMakeFiles/app.dir/depend.make
@@ -72,7 +72,7 @@ include CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/main.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/main.cpp.o: ../main.cpp
 CMakeFiles/app.dir/main.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/trungcao/training/review-C/StackStudent/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/app.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/trungcao/training/review-C/StackStudent/build_x86/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/app.dir/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/main.cpp.o -MF CMakeFiles/app.dir/main.cpp.o.d -o CMakeFiles/app.dir/main.cpp.o -c /home/trungcao/training/review-C/StackStudent/main.cpp
 
 CMakeFiles/app.dir/main.cpp.i: cmake_force
@@ -86,7 +86,7 @@ CMakeFiles/app.dir/main.cpp.s: cmake_force
 CMakeFiles/app.dir/src/StackStudent.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/StackStudent.cpp.o: ../src/StackStudent.cpp
 CMakeFiles/app.dir/src/StackStudent.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/trungcao/training/review-C/StackStudent/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/app.dir/src/StackStudent.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/trungcao/training/review-C/StackStudent/build_x86/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/app.dir/src/StackStudent.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/StackStudent.cpp.o -MF CMakeFiles/app.dir/src/StackStudent.cpp.o.d -o CMakeFiles/app.dir/src/StackStudent.cpp.o -c /home/trungcao/training/review-C/StackStudent/src/StackStudent.cpp
 
 CMakeFiles/app.dir/src/StackStudent.cpp.i: cmake_force
@@ -100,7 +100,7 @@ CMakeFiles/app.dir/src/StackStudent.cpp.s: cmake_force
 CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o: /home/trungcao/training/review-C/linklist/src/linklist.c
 CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/trungcao/training/review-C/StackStudent/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/trungcao/training/review-C/StackStudent/build_x86/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o -MF CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o.d -o CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o -c /home/trungcao/training/review-C/linklist/src/linklist.c
 
 CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.i: cmake_force
@@ -114,7 +114,7 @@ CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.s: cm
 CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.o: /home/trungcao/training/review-C/linklist/src/student.c
 CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/trungcao/training/review-C/StackStudent/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/trungcao/training/review-C/StackStudent/build_x86/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.o -MF CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.o.d -o CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.o -c /home/trungcao/training/review-C/linklist/src/student.c
 
 CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.i: cmake_force
@@ -135,17 +135,17 @@ app_OBJECTS = \
 # External object files for target app
 app_EXTERNAL_OBJECTS =
 
-app: CMakeFiles/app.dir/main.cpp.o
-app: CMakeFiles/app.dir/src/StackStudent.cpp.o
-app: CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o
-app: CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.o
-app: CMakeFiles/app.dir/build.make
-app: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/trungcao/training/review-C/StackStudent/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable app"
+../bin/x86/app: CMakeFiles/app.dir/main.cpp.o
+../bin/x86/app: CMakeFiles/app.dir/src/StackStudent.cpp.o
+../bin/x86/app: CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o
+../bin/x86/app: CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.o
+../bin/x86/app: CMakeFiles/app.dir/build.make
+../bin/x86/app: CMakeFiles/app.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/trungcao/training/review-C/StackStudent/build_x86/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../bin/x86/app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/app.dir/build: app
+CMakeFiles/app.dir/build: ../bin/x86/app
 .PHONY : CMakeFiles/app.dir/build
 
 CMakeFiles/app.dir/clean:
@@ -153,6 +153,6 @@ CMakeFiles/app.dir/clean:
 .PHONY : CMakeFiles/app.dir/clean
 
 CMakeFiles/app.dir/depend:
-	cd /home/trungcao/training/review-C/StackStudent/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/trungcao/training/review-C/StackStudent /home/trungcao/training/review-C/StackStudent /home/trungcao/training/review-C/StackStudent/build /home/trungcao/training/review-C/StackStudent/build /home/trungcao/training/review-C/StackStudent/build/CMakeFiles/app.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/trungcao/training/review-C/StackStudent/build_x86 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/trungcao/training/review-C/StackStudent /home/trungcao/training/review-C/StackStudent /home/trungcao/training/review-C/StackStudent/build_x86 /home/trungcao/training/review-C/StackStudent/build_x86 /home/trungcao/training/review-C/StackStudent/build_x86/CMakeFiles/app.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/app.dir/depend
 

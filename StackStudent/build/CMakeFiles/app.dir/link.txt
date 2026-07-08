@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/app.dir/main.cpp.o CMakeFiles/app.dir/src/StackStudent.cpp.o CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.o -o app 

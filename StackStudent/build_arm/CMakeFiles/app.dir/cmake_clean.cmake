@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "../bin/arm/app"
+  "../bin/arm/app.pdb"
   "CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o"
   "CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/linklist.c.o.d"
   "CMakeFiles/app.dir/home/trungcao/training/review-C/linklist/src/student.c.o"
@@ -7,8 +9,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/app.dir/main.cpp.o.d"
   "CMakeFiles/app.dir/src/StackStudent.cpp.o"
   "CMakeFiles/app.dir/src/StackStudent.cpp.o.d"
-  "app"
-  "app.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

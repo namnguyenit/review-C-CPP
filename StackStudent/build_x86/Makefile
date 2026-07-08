@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/trungcao/training/review-C/StackStudent
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/trungcao/training/review-C/StackStudent/build
+CMAKE_BINARY_DIR = /home/trungcao/training/review-C/StackStudent/build_x86
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/trungcao/training/review-C/StackStudent/build/CMakeFiles /home/trungcao/training/review-C/StackStudent/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/trungcao/training/review-C/StackStudent/build_x86/CMakeFiles /home/trungcao/training/review-C/StackStudent/build_x86//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/trungcao/training/review-C/StackStudent/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/trungcao/training/review-C/StackStudent/build_x86/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
