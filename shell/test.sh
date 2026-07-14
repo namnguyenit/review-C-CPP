@@ -1,28 +1,52 @@
-#!/bin/bash
-# NAME="trung"
-# echo $NAME
-# echo "Hello, $NAME!"
-# echo "$NAME"
-# echo '$NAME'
+#!/usr/bin/env bash
 
-# DATE=$(date)
+set -u
 
-# echo $DATE
+usage() {
+    echo "Dung: $0 <ten|pid> [giay]"
+    echo "VD: $0 nginx 5"
+    echo "VD: $0 1234 2"
+}
 
-# LS=$(ls)
-# echo $LS
+TARGET="${1:-}"
+INTERVAL="${2:-5}"
 
-# echo "Nhap ten: "
-# read TEN
-# echo "xin chao $TEN"
+if [[ -z "$TARGET" ]]; then
+    usage
+    echo
+    echo "--- Top 10 tien trinh (CPU) ---"
+    ps -eo pid,%cpu,comm --sort=-%cpu | head -n 11
+    exit 1
+fi
 
-# read -p "Nhap ten: " NAME
+if ! [[ "$INTERVAL" =~ ^[0-9]+$ ]] || [[ "$INTERVAL" -le 0 ]]; then
+    echo "Loi thoi gian."
+    exit 1
+fi
 
-# echo $NAME
+echo "Theo doi: $TARGET ($INTERVAL s)"
+echo "Ctrl+C de thoat."
+echo
 
-readonly PI=3.14
+while true; do
+    echo "--- $(date '+%T') ---"
 
-unset PI
+    if [[ "$TARGET" =~ ^[0-9]+$ ]]; then
+        if ps -p "$TARGET" > /dev/null 2>&1; then
+            ps -p "$TARGET" -o pid,ppid,%cpu,%mem,etime,cmd=
+        else
+            echo "PID $TARGET dung."
+        fi
+    else
+        mapfile -t PIDS < <(pgrep -x "$TARGET" || true)
 
-echo PI
+        if [[ ${#PIDS[@]} -eq 0 ]]; then
+            echo "'$TARGET' dung."
+        else
+            ps -p "$(IFS=,; echo "${PIDS[*]}")" -o pid,ppid,%cpu,%mem,etime,cmd=
+        fi
+    fi
 
+    echo
+    sleep "$INTERVAL"
+done
