@@ -1,0 +1,9 @@
+load("//build/kernel/kleaf:kernel.bzl", "ddk_module")
+
+ddk_module(
+    name = "my_char_dev",
+    srcs = ["my_char_dev.c"],
+    out = "my_char_dev.ko",
+    kernel_build = "//common:kernel_x86_64",
+    deps = ["//common:all_headers_x86_64"],
+)

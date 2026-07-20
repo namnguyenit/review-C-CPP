@@ -14,7 +14,6 @@ INTERVAL="${2:-5}"
 if [[ -z "$TARGET" ]]; then
     usage
     echo
-    echo "--- Top 10 tien trinh (CPU) ---"
     ps -eo pid,%cpu,comm --sort=-%cpu | head -n 11
     exit 1
 fi

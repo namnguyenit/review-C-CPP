@@ -1,0 +1,14 @@
+load("//build/kernel/kleaf:kernel.bzl", "ddk_module", "kernel_compile_commands")
+
+ddk_module(
+    name = "hello_module",
+    srcs = ["hello_module.c"],
+    out = "hello_module.ko",
+    kernel_build = "//common:kernel_x86_64",
+    deps = ["//common:all_headers_x86_64"],
+)
+
+kernel_compile_commands(
+    name = "hello_module_compile_commands",
+    deps = [":hello_module"],
+)

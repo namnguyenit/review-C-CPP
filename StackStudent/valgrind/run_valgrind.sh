@@ -1,10 +1,8 @@
 #!/bin/bash
 
-# Lấy thư mục chứa script
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-# Đường dẫn đến executable (app)
 EXECUTABLE="../app"
 if [ ! -f "$EXECUTABLE" ]; then
     EXECUTABLE="../bin/x86/app"
