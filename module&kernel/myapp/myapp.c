@@ -1,48 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <fcntl.h>
+#include <fcntl.h>      
 #include <unistd.h>
-#include <sys/ioctl.h>
+#include <sys/ioctl.h>    /* BẮT BUỘC: Thư viện chứa hàm ioctl cho User Space */
+
+#include "../mydriver/my_char_dev.h"  /* Kéo từ điển mã lệnh vào */
 
 #define DEVICE_PATH "/dev/my_char_dev"
 
+int main() {
+    int fd;
+    char write_buf[] = "Xin chao Kernel!";
+    char read_buf[1024];
 
-int main(){
-    int fd  = open(DEVICE_PATH, O_RDWR);
-    char write_buf[] = "Hello, Kernel!, day la app User Space";
-    char read_buf[100];
-    int byt_read, byt_write;
-    
-    printf("dang mo file device: %s\n", DEVICE_PATH);
+    fd = open(DEVICE_PATH, O_RDWR); 
     if (fd < 0) {
-        perror("Loi mo file device");
-        return EXIT_FAILURE;
+        perror("Loi mo thiet bi"); return -1;
     }
-    printf("Mo file device thanh cong\n");
-    printf("dang ghi du lieu vao device: %s\n", write_buf);
-    byt_write = write(fd, write_buf, strlen(write_buf));
-    if (byt_write < 0) {
-        perror("Loi ghi du lieu vao device");
-        close(fd);
-        return EXIT_FAILURE;
-    }else{
-        printf("Ghi du lieu vao device thanh cong, so byte ghi: %d\n", byt_write);
+
+    /* 1. Ghi và Đọc thử như bình thường */
+    write(fd, write_buf, strlen(write_buf));
+    read(fd, read_buf, sizeof(read_buf));
+    printf("Truoc khi xoa, doc duoc: '%s'\n", read_buf);
+
+    /* 2. RA LỆNH IOCTL XÓA BỘ ĐỆM */
+    printf("\n>>> Gui lenh CMD_CLEAR_BUFFER xuong Kernel...\n");
+    if (ioctl(fd, CMD_CLEAR_BUFFER) < 0) {
+        perror("Loi gui lenh IOCTL");
+    } else {
+        printf(">>> Da gui lenh thanh cong!\n");
     }
-    printf("dang doc du lieu tu device\n");
-    memset(read_buf, 0, sizeof(read_buf));
-    byt_read = read(fd, read_buf, sizeof(read_buf));
-    if (byt_read < 0) {
-        perror("Loi doc du lieu tu device");
-        close(fd);
-        return EXIT_FAILURE;
-    }else{
-        printf("Doc du lieu tu device thanh cong, so byte doc: %d\n", byt_read);
-        printf("Du lieu doc duoc: %s\n", read_buf); 
-    }
-    printf("dang dong file device\n");
+
+    /* 3. Đọc lại để nghiệm thu */
+    memset(read_buf, 0, sizeof(read_buf)); 
+    int bytes = read(fd, read_buf, sizeof(read_buf));
+    printf("Sau khi xoa, doc duoc %d bytes. Noi dung: '%s'\n", bytes, read_buf);
+
     close(fd);
     return 0;
 }
-
-

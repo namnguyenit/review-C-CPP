@@ -1,18 +1,16 @@
-#include "asm/stat.h"
-#include "linux/err.h"
-#include "linux/types.h"
-#define pr_fmt(fmt) "[My Char Dev]" fmt
-
-#include "linux/module.h"
-#include "linux/init.h"
-#include "linux/fs.h"
-#include "linux/cdev.h"
-#include "linux/device.h"
-#include "linux/uaccess.h"
-
+#include <linux/module.h>
+#include <linux/kernel.h>
+#include <linux/init.h>
+#include <linux/fs.h>
+#include <linux/cdev.h>
+#include <linux/device.h>
+#include <linux/uaccess.h>
+#include <linux/errno.h>
 #define DEVICE_NAME "my_char_dev"
 #define CLASS_NAME "my_char_class"
 #define MAX_SIZE 1024
+
+#include "my_char_dev.h"
 
 static char kernel_buffer[MAX_SIZE]; // bộ nhớ đệm trong ram
 static int current_size = 0; // kích thước hiện tại của bộ nhớ đệm
@@ -73,12 +71,29 @@ static ssize_t my_write(struct file *file, const char __user *user_buf, size_t s
     return size;
 }
 
+
+static long my_ioctl(struct file *file, unsigned int cmd, unsigned long arg) {
+    switch (cmd) {
+        case CMD_CLEAR_BUFFER:
+            pr_info("Nhan lenh IOCTL: Thuc hien xoa toan bo buffer!\n");
+            memset(kernel_buffer, 0, MAX_SIZE);
+            current_size = 0; /* Reset lại kích thước */
+            break;
+            
+        default:
+            pr_warn("Nhan lenh IOCTL khong hop le: %u\n", cmd);
+            return -ENOTTY;
+    }
+    return 0;
+}
+
 static struct file_operations fops = {
     .owner = THIS_MODULE,
     .open = my_open,
     .release = my_release,
     .read = my_read,
     .write = my_write,
+    .unlocked_ioctl = my_ioctl
 
 };
 
